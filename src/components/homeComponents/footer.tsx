@@ -135,20 +135,7 @@ const Footer: React.FC = () => {
           </div>
 
           {/* Website Credit */}
-          <div className="text-sm text-center mt-8">
-            <p className="text-gray-400">
-              Website created by{" "}
-              <span className="text-gray-600">|</span>{" "}
-              <a
-                href="https://instagram.com/pawacode"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-red-500 hover:text-red-400 transition"
-              >
-                @pawacode
-              </a>
-            </p>
-          </div>
+         
 
         </div>
       </div>
