@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { FaShoppingCart, FaHeart, FaBars, FaTimes, FaShoppingBag } from 'react-icons/fa';
+import { FaHeart, FaBars, FaTimes, FaShoppingBag } from 'react-icons/fa';
 import logo from '../../assets/logo.png';
 
 const Header: React.FC = () => {
@@ -29,10 +29,10 @@ const Header: React.FC = () => {
             to="/shop"
             className="relative group font-medium text-gray-800 hover:text-black transition duration-300"
           >
-            Shop
+              Order
             <span className="absolute bottom-0 left-1/2 w-0 h-[2px] bg-black transition-all duration-300 transform -translate-x-1/2 group-hover:w-full group-hover:scale-x-100"></span>
           </Link>
-          <Link
+          {/* <Link
             to="/sale"
             className="relative group font-medium text-gray-800 hover:text-black transition duration-300"
           >
@@ -52,7 +52,7 @@ const Header: React.FC = () => {
           >
             Checkout
             <span className="absolute bottom-0 left-1/2 w-0 h-[2px] bg-black transition-all duration-300 transform -translate-x-1/2 group-hover:w-full group-hover:scale-x-100"></span>
-          </Link>
+          </Link> */}
           <Link
             to="/blog"
             className="relative group font-medium text-gray-800 hover:text-black transition duration-300"
@@ -67,9 +67,9 @@ const Header: React.FC = () => {
           </Link>
 
           {/* Cart Icon */}
-          <Link to="/cart" className="text-xl cursor-pointer text-gray-800">
+          {/* <Link to="/cart" className="text-xl cursor-pointer text-gray-800">
             <FaShoppingCart />
-          </Link>
+          </Link> */}
         </nav>
 
         {/* Hamburger and Icons for Small Screens */}
@@ -78,9 +78,9 @@ const Header: React.FC = () => {
             <FaHeart />
           </Link>
 
-          <Link to="/cart" className="text-xl cursor-pointer text-gray-800 hover:text-red-500 ">
+          {/* <Link to="/cart" className="text-xl cursor-pointer text-gray-800 hover:text-red-500 ">
             <FaShoppingCart />
-          </Link>
+          </Link> */}
           <Link to="/shop" className="text-xl cursor-pointer text-gray-800 hover:text-red-500 ">
             <FaShoppingBag />
           </Link>
@@ -110,7 +110,7 @@ const Header: React.FC = () => {
               </Link>
             </li>
             <hr />
-            <li>
+            {/* <li>
               <Link
                 to="/products"
                 onClick={() => setIsMenuOpen(false)}
@@ -119,9 +119,9 @@ const Header: React.FC = () => {
                 Shop
                 <span className="absolute bottom-0 left-1/2 w-0 h-[2px] bg-black transition-all duration-300 transform -translate-x-1/2 group-hover:w-full group-hover:scale-x-100"></span>
               </Link>
-            </li>
-            <hr />
-            <li>
+            </li> */}
+            {/* <hr /> */}
+            {/* <li>
               <Link
                 to="/cart"
                 onClick={() => setIsMenuOpen(false)}
@@ -164,7 +164,7 @@ const Header: React.FC = () => {
                 <span className="absolute bottom-0 left-1/2 w-0 h-[2px] bg-black transition-all duration-300 transform -translate-x-1/2 group-hover:w-full group-hover:scale-x-100"></span>
               </Link>
             </li>
-            <hr />
+            <hr /> */}
             <li>
               <Link
                 to="/blog"
