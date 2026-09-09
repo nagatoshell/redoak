@@ -1,89 +1,152 @@
+import React from 'react';
+import {
+  FaEnvelope,
+  FaPhoneAlt,
+  FaMapMarkerAlt,
+  FaClock,
+  FaFacebookF,
+  FaTwitter,
+  FaInstagram,
+} from 'react-icons/fa';
 
-import { FaWhatsapp, FaEnvelope } from "react-icons/fa";
-import { useLocation } from 'react-router-dom';
-import React, { useEffect, useState } from "react";
-
-
-const ContactPage: React.FC = () => {
-  
-  const location = useLocation();
-  
- 
-
-  const [formData, setFormData] = useState<any>(null);
-  
-    useEffect(() => {
-      const savedFormData = localStorage.getItem("checkoutFormData");
-  
-      if (savedFormData) {
-        setFormData(JSON.parse(savedFormData));
-      }
-    }, []);
-  
-    if (!formData) {
-      return <p>Loading...</p>;
-    }
-
- const { orderId  } = location.state || {};
-
-    const message = encodeURIComponent(
-      `Hello ATB,\nI have made the payment of ${formData.amount} for my order with Order id ${orderId}.
-     \nHere is the payment receipt for your reference. \n \n 
-      Senders Name: ${formData.senderName} \n
-      Bank Name: ${formData.senderBank} \n
-      Amount: ${formData.amount} \n
-      \nKindly confirm the receipt, and let me know if any further information is needed.\n\nThank you! `
-    );
-
- 
-
-
+const ContactUs: React.FC = () => {
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100 px-4">
-      <div className="bg-white p-8 rounded-lg shadow-lg max-w-md w-full">
-        <h1 className="text-2xl font-semibold text-center mb-6 text-gray-800">Thank You! <span className="text-red-500 ">{formData.name}</span> </h1>
-        <p className="text-center text-gray-600 mb-4">
-          Your payment confirmation has been sent successfully. <span className="text-red-500 font-semibold">{orderId}</span> 
+    <div className="max-w-7xl mx-auto px-4 py-12 sm:px-6 lg:px-8 bg-white">
+      {/* Header Section */}
+      <div className="text-center mb-12">
+        <h1 className="text-4xl font-bold text-[#1a2d42]">Contact Us</h1>
+        <p className="text-lg text-gray-600 mt-2">
+          We're here to help! Reach out to us anytime, and we'll respond as soon as possible.
         </p>
-        <p className="text-center text-gray-800 mb-4">
-          Please send your payment receipt via WhatsApp to complete the process and subscribe to our newsletter for updates.
-        </p>
+      </div>
 
-        {/* WhatsApp Button */}
-        <a
-          href={`https://wa.me/+2349086471660?text=${message}`}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="w-full bg-green-600 text-white py-2 rounded-lg flex items-center justify-center space-x-2 mb-4"
-        >
-          <FaWhatsapp size={20} />
-          <span>Send Receipt via WhatsApp</span>
-        </a>
+      {/* Main Content */}
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+        {/* Contact Form */}
+        <div className="bg-white p-8 rounded-lg shadow-lg">
+          <h2 className="text-2xl font-semibold text-[#1a2d42] mb-6">
+            Send Us a Message
+          </h2>
+          <form>
+            <div className="mb-6">
+              <label
+                htmlFor="name"
+                className="block text-sm font-medium text-gray-700 mb-2"
+              >
+                Full Name
+              </label>
+              <input
+                type="text"
+                id="name"
+                placeholder="Enter your name"
+                className="w-full p-3 border border-gray-300 rounded-lg shadow-sm focus:ring-[#1a2d42] focus:border-[#1a2d42]"
+              />
+            </div>
+            <div className="mb-6">
+              <label
+                htmlFor="email"
+                className="block text-sm font-medium text-gray-700 mb-2"
+              >
+                Email Address
+              </label>
+              <input
+                type="email"
+                id="email"
+                placeholder="Enter your email"
+                className="w-full p-3 border border-gray-300 rounded-lg shadow-sm focus:ring-[#1a2d42] focus:border-[#1a2d42]"
+              />
+            </div>
+            <div className="mb-6">
+              <label
+                htmlFor="message"
+                className="block text-sm font-medium text-gray-700 mb-2"
+              >
+                Message
+              </label>
+              <textarea
+                id="message"
+                rows={4}
+                placeholder="Write your message here..."
+                className="w-full p-3 border border-gray-300 rounded-lg shadow-sm focus:ring-[#1a2d42] focus:border-[#1a2d42]"
+              ></textarea>
+            </div>
+            <button
+              type="submit"
+              className="w-full bg-[#1a2d42] text-white py-3 px-4 rounded-lg shadow-lg hover:bg-[#142233] transition-all duration-300"
+            >
+              Send Message
+            </button>
+          </form>
+        </div>
 
-        {/* Newsletter Subscription */}
-        <form className="mt-6 space-y-4">
-          <h2 className="text-lg font-semibold text-gray-800">Subscribe to Newsletter</h2>
-          <div className="relative">
-            <input
-              type="email"
-              placeholder="Enter your email"
-              required
-              className="w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500"
-            />
-            <div className="absolute right-4 top-1/2 transform -translate-y-1/2 text-red-500">
-              <FaEnvelope />
+        {/* Contact Details */}
+        <div className="space-y-8">
+          {/* Contact Info */}
+          <div className="bg-white p-8 rounded-lg shadow-lg">
+            <h2 className="text-2xl font-semibold text-[#1a2d42] mb-4">
+              Contact Information
+            </h2>
+            <ul className="space-y-4">
+              <li className="flex items-center space-x-4">
+                <FaEnvelope className="text-[#1a2d42] text-xl" />
+                <span className="text-gray-700">support@example.com</span>
+              </li>
+              <li className="flex items-center space-x-4">
+                <FaPhoneAlt className="text-[#1a2d42] text-xl" />
+                <span className="text-gray-700">+234 801 234 5678</span>
+              </li>
+              <li className="flex items-center space-x-4">
+                <FaMapMarkerAlt className="text-[#1a2d42] text-xl" />
+                <span className="text-gray-700">
+                  123 Shopify Lane, Lagos, Nigeria
+                </span>
+              </li>
+            </ul>
+          </div>
+
+          {/* Operational Hours */}
+          <div className="bg-white p-8 rounded-lg shadow-lg">
+            <h2 className="text-2xl font-semibold text-[#1a2d42] mb-4">
+              Business Hours
+            </h2>
+            <ul className="space-y-4">
+              <li className="flex items-center space-x-4">
+                <FaClock className="text-[#1a2d42] text-xl" />
+                <span className="text-gray-700">Open 24/7</span>
+              </li>
+            </ul>
+          </div>
+
+          {/* Social Media */}
+          <div className="bg-white p-8 rounded-lg shadow-lg">
+            <h2 className="text-2xl font-semibold text-[#1a2d42] mb-4">
+              Connect With Us
+            </h2>
+            <div className="flex space-x-4">
+              <a
+                href="https://facebook.com"
+                className="text-white bg-[#1a2d42] p-3 rounded-full shadow-lg hover:bg-[#142233]"
+              >
+                <FaFacebookF />
+              </a>
+              <a
+                href="https://twitter.com"
+                className="text-white bg-[#1a2d42] p-3 rounded-full shadow-lg hover:bg-[#142233]"
+              >
+                <FaTwitter />
+              </a>
+              <a
+                href="https://instagram.com"
+                className="text-white bg-[#1a2d42] p-3 rounded-full shadow-lg hover:bg-[#142233]"
+              >
+                <FaInstagram />
+              </a>
             </div>
           </div>
-          <button
-            type="submit"
-            className="w-full bg-red-600 text-white py-2 rounded-lg font-semibold hover:bg-red-700"
-          >
-            Subscribe
-          </button>
-        </form>
+        </div>
       </div>
     </div>
   );
 };
 
-export default ContactPage;
+export default ContactUs;
